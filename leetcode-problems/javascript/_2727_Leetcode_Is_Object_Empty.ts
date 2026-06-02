@@ -1,11 +1,12 @@
-type JSONValue =
+type JsonValue =
   | null
   | boolean
   | number
   | string
-  | JSONValue[]
-  | { [key: string]: JSONValue };
-type Obj = Record<string, JSONValue> | JSONValue[];
+  | JsonValue[]
+  | { [key: string]: JsonValue };
+
+type Obj = Record<string, JsonValue> | JsonValue[];
 
 function isEmpty(obj: Obj): boolean {
   return Object.entries(obj).length === 0;
